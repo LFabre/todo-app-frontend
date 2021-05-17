@@ -1,0 +1,47 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+import { useTranslation } from 'react-i18next'
+
+import Form from './Form'
+import { SCHEMAS } from './../../class/constants'
+
+function FormProject({ onSubmit, initialValues }) {
+  const { t } = useTranslation()
+  const _t = (s, op) => t(`forms.project.${s}`, op)
+
+  const getTitle = () => {
+    if (!initialValues)
+      return _t('title')
+
+    return _t('titleEdit', { name: initialValues.name })
+  }
+
+  return (
+    <Form
+      title={getTitle()}
+      btnText={_t('btn')}
+      schema={SCHEMAS.PROJECT}
+      onSubmit={onSubmit}
+      initialValues={{
+        name: initialValues ? initialValues.name : '',
+        description: initialValues ? initialValues.description : '',
+      }}
+      fields={[
+        { id: 'name', type: 'text', placeholder: _t('name') },
+        { id: 'description', type: 'text', placeholder: _t('description') },
+      ]}
+    />
+  )
+}
+
+FormProject.propTypes = {
+  onSubmit: PropTypes.func,
+  initialValues: PropTypes.object,
+}
+
+FormProject.defaultProps = {
+  onSubmit: () => true,
+  initialValues: null
+}
+
+export default FormProject;
