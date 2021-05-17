@@ -45,7 +45,6 @@ function LoginScreen({ isAuth, isLoginIn, loginError, hasLoggedOut }) {
       <Card>
         <LoginForm onSubmit={login} />
       </Card>
-      {renderLoginError()}
       <br />
       {renderLoginError()}
       <p>{t('screens.login.newUser')}</p>

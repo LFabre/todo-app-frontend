@@ -16,11 +16,11 @@ function RegisterForm({ onSubmit }) {
       schema={SCHEMAS.REGISTER}
       onSubmit={onSubmit}
       initialValues={{
-        login: 'Fabre',
-        firstName: 'Lucas',
-        lastName: 'Fabre',
-        password: '123',
-        confPassword: '123',
+        login: '',
+        firstName: '',
+        lastName: '',
+        password: '',
+        confPassword: '',
       }}
       fields={[
         { id: 'login', type: 'text', placeholder: _t('login') },

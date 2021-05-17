@@ -16,8 +16,8 @@ function LoginForm({ onSubmit }) {
       schema={SCHEMAS.LOGIN}
       onSubmit={onSubmit}
       initialValues={{
-        login: 'Fabre',
-        password: '123',
+        login: '',
+        password: '',
       }}
       fields={[
         { id: 'login', type: 'text', placeholder: _t('login') },
