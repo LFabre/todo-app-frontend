@@ -1,4 +1,4 @@
-# Todo App - Backend
+# Todo App - Frontend
 
 ## Functionalities
 
